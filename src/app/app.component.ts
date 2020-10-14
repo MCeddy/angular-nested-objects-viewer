@@ -9,8 +9,8 @@ import { FieldModel } from './models';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    input =
-        '{"a":true,"b":1,"c":"Hello, World!","d":{"e":"I am a nested string!","f":{"g":{"h":{"i":"So am I!","j":false,"k":123,"l":"And I am last!"}}}}}';
+    input = '';
+    errorMessage: string;
 
     fields: FieldModel[] = [];
 
@@ -18,6 +18,9 @@ export class AppComponent {
 
     inputChanged(newInput: any): void {
         this.input = newInput;
+
+        // reset error
+        this.errorMessage = null;
 
         if (newInput === '') {
             // reset fields
@@ -33,7 +36,9 @@ export class AppComponent {
 
             console.log('fields', this.fields);
         } catch (error) {
-            console.error('JSON error:', error.message);
+            console.error(error?.message);
+
+            this.errorMessage = error?.message;
         }
     }
 }

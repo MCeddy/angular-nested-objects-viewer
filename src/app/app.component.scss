@@ -1,4 +1,10 @@
-#input {
-    height: 200px;
-    width: 600px;
+:host {
+    #input {
+        height: 200px;
+        width: 600px;
+    }
+
+    app-field {
+        margin-top: 20px;
+    }
 }

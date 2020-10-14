@@ -1,7 +1,10 @@
 <textarea
     id="input"
+    placeholder="insert your object here"
     [ngModel]="input"
     (ngModelChange)="inputChanged($event)"
 ></textarea>
+
+<p class="error" [hidden]="errorMessage == null">error: {{ errorMessage }}</p>
 
 <app-field *ngFor="let field of fields" [field]="field"></app-field>
