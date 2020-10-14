@@ -1,0 +1,30 @@
+<label [attr.for]="field.name">{{ field?.name }}</label>
+
+<ng-container [ngSwitch]="field?.type">
+    <ng-container *ngSwitchCase="'boolean'">
+        <input
+            type="checkbox"
+            [attr.id]="field?.name"
+            [checked]="field?.value"
+        />
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'number'">
+        <input type="number" [attr.id]="field?.name" [value]="field?.value" />
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'string'">
+        <input type="text" [attr.id]="field?.name" [value]="field?.value" />
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'object'">
+        <app-field
+            *ngFor="let nestedField of field?.fields"
+            [field]="nestedField"
+        ></app-field>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+        <p class="error">not supported</p>
+    </ng-container>
+</ng-container>
