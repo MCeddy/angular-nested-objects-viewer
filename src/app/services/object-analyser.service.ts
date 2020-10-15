@@ -9,6 +9,16 @@ export class ObjectAnalyserService {
     constructor() {}
 
     analyse(nestedObject: any, fields: FieldModel[] = []): FieldModel[] {
+        if (nestedObject == null) {
+            return [];
+        }
+
+        if (typeof nestedObject !== 'object') {
+            console.warn('object is not an object');
+
+            return [];
+        }
+
         const names = Object.keys(nestedObject);
 
         for (const name of names) {
