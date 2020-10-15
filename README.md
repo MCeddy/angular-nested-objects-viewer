@@ -1,4 +1,4 @@
-# AngularNestedObjectsViewer
+# Angular nested objects viewer
 
 ![CI](https://github.com/MCeddy/angular-nested-objects-viewer/workflows/CI/badge.svg)
 
