@@ -1,9 +1,18 @@
+@import "./colors";
+
 :host {
     display: block;
 
-    margin: 0 0 10px 20px;
+    margin-top: 20px;
+    padding: 20px;
+
+    background-color: $color-field-background;
 
     label {
         margin-right: 10px;
+    }
+
+    &:first-child {
+        margin-top: 0;
     }
 }

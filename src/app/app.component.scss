@@ -1,10 +1,19 @@
+@import "./colors";
+
 :host {
+    display: block;
+
+    padding: 20px 40px;
+
     #input {
         height: 200px;
-        width: 600px;
+        width: 100%;
     }
 
-    app-field {
-        margin-top: 20px;
+    .fields {
+        margin-top: 40px;
+        padding: 20px;
+
+        background-color: $color-field-background;
     }
 }
