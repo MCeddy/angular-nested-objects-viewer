@@ -160,4 +160,40 @@ describe('ObjectAnalyserService', () => {
         ];
         expect(result).toEqual(expectedResult);
     });
+
+    it('should add to existing field list for easy object input', () => {
+        const input = { b: 'Hey', key: '5599-CA' };
+        const existingFields: FieldModel[] = [
+            {
+                name: 'war schon',
+                type: 'string',
+                value: 'da',
+                fields: [],
+            },
+        ];
+
+        const result = service.analyse(input, existingFields);
+
+        const expectedResult: FieldModel[] = [
+            {
+                name: 'war schon',
+                type: 'string',
+                value: 'da',
+                fields: [],
+            },
+            {
+                name: 'b',
+                type: 'string',
+                value: 'Hey',
+                fields: [],
+            },
+            {
+                name: 'key',
+                type: 'string',
+                value: '5599-CA',
+                fields: [],
+            },
+        ];
+        expect(result).toEqual(expectedResult);
+    });
 });
