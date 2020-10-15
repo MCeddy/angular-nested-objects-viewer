@@ -7,6 +7,6 @@
 
 <p class="error" [hidden]="errorMessage == null">error: {{ errorMessage }}</p>
 
-<div class="fields">
+<div class="fields" [hidden]="fields?.length === 0">
     <app-field *ngFor="let field of fields" [field]="field"></app-field>
 </div>
