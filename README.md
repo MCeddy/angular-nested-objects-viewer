@@ -5,3 +5,7 @@
 ## Description
 
 Render arbitrary object recursiv and show content of number, string and boolean values.
+
+## Demo
+
+https://mceddy.github.io/angular-nested-objects-viewer/
