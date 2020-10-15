@@ -16,7 +16,7 @@ export class AppComponent {
 
     constructor(private objectAnalyser: ObjectAnalyserService) {}
 
-    inputChanged(newInput: any): void {
+    inputChanged(newInput: string): void {
         this.input = newInput;
 
         // reset error
